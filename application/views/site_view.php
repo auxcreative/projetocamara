@@ -59,7 +59,7 @@
     	<strong>Instituíção</strong>
   		</a>
   		<a href="<?php echo base_url('instituicao/presidencia_da_camara'); ?>" class="list-group-item">Presidente da Câmara</a>
-  		<!--<a href="<?php echo base_url('instituicao/centro_de_memoria'); ?>" class="list-group-item">Centro de Memória</a> --> 		 		
+  		<a href="<?php echo base_url('instituicao/centro_de_memoria'); ?>" class="list-group-item">Centro de Memória</a> 		 		
   		<a href="<?php echo base_url('instituicao/mesa_diretora'); ?>" class="list-group-item">Mesa Diretora</a>
   		<a href="<?php echo base_url('instituicao/regimento_interno'); ?>" class="list-group-item">Regimento Interno</a>
   		<a href="<?php echo base_url('instituicao/ordem_do_dia'); ?>" class="list-group-item">Ordem do Dia</a>  		
