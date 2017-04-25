@@ -3,7 +3,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <h1 class="page-header">
-                           <i class="fa fa-pencil"></i> Editar Vereador<small></small>                            
+                           <i class="fa fa-pencil"></i> Editar Vereador<small></small>
                         </h1>
                         <ol class="breadcrumb">
                             <li class="active">
@@ -13,13 +13,13 @@
                     </div>
                 </div>
                 <!-- /.row -->
- 
+
                 <!-- /.row -->
                 <div class="row">
                     <div class="col-lg-12">
                     <div class="container-fluid">
                                	<form action="<?php echo current_url(); ?>" method="POST" class="form-group" enctype="multipart/form-data">
-                               
+
                                 <div class="row">
                                 <div class="col-md-2">
                                     <div class=" thumbnail">
@@ -34,8 +34,8 @@
                                                 <label>Nome: </label>
                                                 <input class="form-control" required value="<?php print $vereador->nome ?>" name="p#nome" placeholder="">
                                             </div>
-                                        </div>                                        
-                                    </div>   
+                                        </div>
+                                    </div>
                                     <div class="row">
                                     	<div class="col-lg-6">
                                     		<div class="form-group">
@@ -56,7 +56,7 @@
                                     		</div>
                                     	</div>
 
-                                    </div>                                    
+                                    </div>
                                     <div class="row">
                                         <div class="col-lg-6">
                                             <div class="form-group">
@@ -64,10 +64,10 @@
                                                 <select required="" class="form-control" name="p#id_partido">
                                                     <option value="" >--- Selecione um partido ----</option>
                                                     <?php foreach ($partidos as $partido): ?>
-                                                    <option <?php if($vereador->id_partido == $partido->id) {print "selected";} ?>  value="<?php print $partido->id; ?>"><?php print $partido->nome_partido; ?> (<?php print $partido->sigla; ?>)</option>
+                                                    <option <?php if($vereador->id_partido == $partido->id) {print "selected";} ?>  value="<?php print $partido->id; ?>"><?php print $partido->nome; ?> (<?php print $partido->sigla; ?>)</option>
                                                     <?php endforeach; ?>
                                                 </select>
-                                            </div> 
+                                            </div>
                                         </div>
                                         <div class="col-lg-3">
                                             <div class="form-group">
@@ -95,9 +95,9 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>   
+                                    </div>
                                 </div>
-                                </div> 
+                                </div>
                                 <div class="row">
                                 <div class="col-lg-4">
                                     <label>Biografia: </label>
@@ -109,19 +109,19 @@
                                             <div class="form-group">
                                                 <label>Telefone Fixo: </label>
                                                 <input class="form-control" required value="<?php print $vereador->telefone_fixo ?>" name="p#telefone_fixo" placeholder="">
-                                            </div> 
+                                            </div>
                                         </div>
                                         <div class="col-lg-4">
                                             <div class="form-group">
                                                 <label>Celular: </label>
                                                 <input class="form-control"  value="<?php print $vereador->celular ?>" name="p#celular" placeholder="">
-                                            </div> 
+                                            </div>
                                         </div>
                                         <div class="col-lg-4">
                                             <div class="form-group">
                                                 <label>E-mail: </label>
                                                 <input class="form-control"  value="<?php print $vereador->email ?>" name="p#email" placeholder="">
-                                            </div> 
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="row">
@@ -137,7 +137,7 @@
                                             <div class="form-group">
                                                 <label>Legislatura: </label>
                                                 <textarea class="form-control" name="p#legislatura" ><?php print $vereador->legislatura ?></textarea>
-                                            </div> 
+                                            </div>
                                     	</div>
                                     </div>
                                 <div class="row">
@@ -150,7 +150,7 @@
                             </form>
                             </div>
                             <!-- /.row (nested) -->
-                    
+
                     </div>
                 </div>
                 <!-- /.row -->

@@ -3,7 +3,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <h1 class="page-header">
-                           <i class="fa fa-plus"></i> Novo Vereador<small></small>                            
+                           <i class="fa fa-plus"></i> Novo Vereador<small></small>
                         </h1>
                         <ol class="breadcrumb">
                             <li class="active">
@@ -14,18 +14,18 @@
                 </div>
                 <!-- /.row -->
 				<!-- AREA DE NOTIFICAÇÃO -->
-                
-                
-                
+
+
+
                 <!-- /.row -->
                 <div class="row">
                     <div class="col-lg-12">
-                    	
+
                         <div class="panel panel-default">
                             <div class="panel-body">
                                 <div class="container-fluid">
                                	<form action="<?php echo current_url(); ?>" method="POST" class="form-group" enctype="multipart/form-data">
-                               
+
                                 <div class="row">
                                 <div class="col-lg-2">
                                     <div style="height: 120px; margin-top: 10px; text-align: center" class="panel panel-default">
@@ -41,7 +41,7 @@
                                                 <input class="form-control" required  name="p#nome" placeholder="">
                                             </div>
                                         </div>
-                                    </div>   
+                                    </div>
                                     <div class="row">
                                     	<div class="col-lg-6">
                                     		<div class="form-group">
@@ -70,10 +70,10 @@
                                                 <select required="" class="form-control" name="p#id_partido">
                                                     <option value="" >--- Selecione um partido ----</option>
                                                     <?php foreach ($partidos as $partido): ?>
-                                                        <option value="<?php print $partido->id; ?>"><?php print $partido->nome_partido; ?> (<?php print $partido->sigla; ?>)</option>
+                                                        <option value="<?php print $partido->id; ?>"><?php print $partido->nome; ?> (<?php print $partido->sigla; ?>)</option>
                                                     <?php endforeach; ?>
                                                 </select>
-                                            </div> 
+                                            </div>
                                         </div>
                                         <div class="col-lg-3">
                                             <div class="form-group">
@@ -101,9 +101,9 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>   
+                                    </div>
                                 </div>
-                                </div> 
+                                </div>
                                 <div class="row">
                                 <div class="col-lg-4">
                                     <label>Biografia: </label>
@@ -115,19 +115,19 @@
                                             <div class="form-group">
                                                 <label>Telefone Fixo: </label>
                                                 <input class="form-control" required  name="p#telefone_fixo" placeholder="">
-                                            </div> 
+                                            </div>
                                         </div>
                                         <div class="col-lg-4">
                                             <div class="form-group">
                                                 <label>Celular: </label>
                                                 <input class="form-control"   name="p#celular" placeholder="">
-                                            </div> 
+                                            </div>
                                         </div>
                                         <div class="col-lg-4">
                                             <div class="form-group">
                                                 <label>E-mail: </label>
                                                 <input class="form-control"   name="p#email" placeholder="">
-                                            </div> 
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="row">
@@ -135,7 +135,7 @@
                                             <div class="form-group">
                                                 <label>Site: </label>
                                                 <input class="form-control"   name="p#site" placeholder="">
-                                            </div> 
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -145,9 +145,9 @@ v                                  <div class="row">
                                             <div class="form-group">
                                                 <label>Legislatura: </label>
                                                 <textarea class="form-control" name="p#legislatura" ><?php print $vereador->legislatura ?></textarea>
-                                            </div> 
+                                            </div>
                                     	</div>
-                                    </div>                                
+                                    </div>
                                 <div class="row">
                                 <div class="col-lg-12">
                                     <button type="submit" class="btn btn-success"><i class="fa fa-check"></i> Avançar</button>

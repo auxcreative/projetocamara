@@ -14,5 +14,5 @@
 .borda {border:1px solid #000000}
 .plano-diretor img { min-width: 100% }
 .plano-diretor a {position: absolute; top: 80%; left:20px;}
-#plenario, #social {padding:20px 10px}
+#plenario, #social {padding:20px 10px}.imagem {margin: 8px !important}
 

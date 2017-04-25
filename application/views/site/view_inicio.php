@@ -14,7 +14,7 @@ if (!defined('BASEPATH'))exit('No direct script access allowed');?>
   <!-- Tab panes -->
   <div class="tab-content">
     <div role="tabpanel" class="tab-pane active" id="home" >
-    	
+
 	<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
   <!-- Indicators -->
   <ol class="carousel-indicators">
@@ -25,7 +25,7 @@ if (!defined('BASEPATH'))exit('No direct script access allowed');?>
 
   <!-- Wrapper for slides -->
   <div class="carousel-inner" role="listbox">
-  	<?php 
+  	<?php
   	$active = 1;
 	foreach($noticia as $news): 	 ?>
     <div class="item <?php echo ($active == 1) ? 'active' : '' ?>">
@@ -36,7 +36,7 @@ if (!defined('BASEPATH'))exit('No direct script access allowed');?>
   </div>
     </div>
     <?php $active++; endforeach; ?>
-      
+
   </div>
 
   <!-- Controls -->
@@ -51,11 +51,11 @@ if (!defined('BASEPATH'))exit('No direct script access allowed');?>
 </div>
     </div>
     <div role="tabpanel" class="tab-pane" id="plenario">
-    	<p>É o órgão deliberativo e soberano da Câmara constituído pela reunião dos 
-    		vereadores no exercício de suas atribuições, detentor de atribuições deliberativas e legislativas. 
-    		Os trabalhos da Câmara desenvolvem-se no período de quatro anos chamado Legislatura, 
-    		composto de quatro sessões legislativas anuais. Cada sessão legislativa anual (ou ordinária) é 
-    		interrompida durante os períodos de recesso, 
+    	<p>É o órgão deliberativo e soberano da Câmara constituído pela reunião dos
+    		vereadores no exercício de suas atribuições, detentor de atribuições deliberativas e legislativas.
+    		Os trabalhos da Câmara desenvolvem-se no período de quatro anos chamado Legislatura,
+    		composto de quatro sessões legislativas anuais. Cada sessão legislativa anual (ou ordinária) é
+    		interrompida durante os períodos de recesso,
     		conforme disposto na Lei Orgânica do Município e no Regimento Interno.
     	</p>
    <blockquote class="blockquote-reverse">
@@ -135,7 +135,7 @@ if (!defined('BASEPATH'))exit('No direct script access allowed');?>
   <dd><a href="<?php echo base_url('noticias/acesso/'.strtolower($mais->slug)); ?>"><?php echo word_limiter($mais->resumo,12); ?></a></dd>
   <?php endforeach; ?>
 
-  
+
 </dl>
 		</div>
 </div>
@@ -150,27 +150,27 @@ if (!defined('BASEPATH'))exit('No direct script access allowed');?>
 </div>
 <div class="col-md-4">
 	<h3>Fique por Dentro</h3>
-	
+
 <ul class="list-unstyled">
   <li><a href="<?php base_url('plenario/ordem_do_dia') ?>"><span class="glyphicon glyphicon-list-alt"></span> Ordem do dia</a></li>
   <li><a href="<?php base_url('plenario/prejetos_de_lei_proposicoes') ?>"><span class="glyphicon glyphicon-duplicate"></span> Projetos de Lei e Proposições</a></li>
   <li><a href="<?php base_url('plenario/legislacao') ?>"><span class="glyphicon glyphicon-book"></span> Legislação </a></li>
   <li><a href="<?php base_url('plenario/lei_de_acesso_a_informacao') ?>"><span class="glyphicon glyphicon-info-sign"></span> Lei de Acesso a informação </a></li>
- 
+
   <li><a href="<?php base_url('plenario/orcamento_municipal') ?>"><span class="glyphicon glyphicon-usd"></span> Orçamento Municipal</a></li>
   <li><a href="<?php base_url('plenario/prejetos_de_lei_proposicoes') ?>"><span class="glyphicon glyphicon-duplicate"></span> Projetos de Lei e Proposições</a></li>
   <li><a href="<?php base_url('plenario/legislacao') ?>"><span class="glyphicon glyphicon-book"></span> Legislação </a></li>
   <li><a href="<?php base_url('plenario/lei_de_acesso_a_informacao') ?>"><span class="glyphicon glyphicon-info-sign"></span> Lei de Acesso a informação </a></li>
-	
 
-</ul>	
-	
-	
-	
+
+</ul>
+
+
+
 	<!--<form action="" method="post" >
 	<div class="form-group">
 		<input type="text" id="nome" class="form-control" name="nome" placeholder="Seu nome" value="" />
-	</div>		
+	</div>
 	<div class="form-group">
 		<input type="text" id="contato" class="form-control" name="contato" placeholder="Email ou Telefone" value="" />
 	</div>
@@ -185,4 +185,17 @@ if (!defined('BASEPATH'))exit('No direct script access allowed');?>
 			<img src="<?php echo base_url('uploads/noticias/rodoviaria.jpg') ?>" />
 	</div> -->
 </div>
-
+<div class="row">
+<div class="col-md-9">
+	<?php foreach ($vereador as $value): ?>
+	<div class="col-md-2">
+		<div class="thumbnail">
+			<a href="<?php echo base_url('vereador/dados_e_contatos/'.codificarString($value->id)); ?>">
+			<img src="<?php echo base_url('uploads/biografias/'.$value->imagem)  ?>" alt="<?php echo $value->nome;  ?>">
+			</a>
+		</div>
+	<!--<img src="<?php echo base_url('uploads/biografias/osmar.jpg'); ?>"  class="img-thumbnail" />-->
+	</div>
+	<?php endforeach; ?>
+</div>
+</div>

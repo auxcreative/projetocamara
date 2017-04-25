@@ -3,7 +3,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <h1 class="page-header">
-                           <i class="fa fa-plus"></i> Novo Partido <small></small>                            
+                           <i class="fa fa-plus"></i> Novo Partido <small></small>
                         </h1>
                         <ol class="breadcrumb">
                             <li class="active">
@@ -18,12 +18,12 @@
                 <!-- /.row -->
                 <div class="row">
                     <div class="col-lg-12">
-                    	
+                    	<?php get_msg('msgacesso'); ?>
                         <div class="panel panel-default" style="height: auto">
                             <div class="panel-body">
                                 <div class="container-fluid">
                                	<form action="<?php echo current_url(); ?>" method="POST" class="form-group" enctype="multipart/form-data">
-                               
+
                                	<div class="row">
                                 <div class="col-lg-2">
                                     <div style="height: 120px; margin-top: 10px; text-align: center" class="panel panel-default">
@@ -35,16 +35,16 @@
                                         <div class="col-lg-12">
                                             <div class="form-group">
                                                 <label>Nome: </label>
-                                                <input class="form-control" required  name="p#nome_partido" placeholder="">
+                                                <input class="form-control" required  name="p#nome" placeholder="">
                                             </div>
                                         </div>
-                                    </div>   
+                                    </div>
                                     <div class="row">
                                         <div class="col-lg-6">
                                             <div class="form-group">
                                                 <label>Sigla: </label>
                                                 <input class="form-control" required  name="p#sigla" placeholder="">
-                                            </div> 
+                                            </div>
                                         </div>
                                         <div class="col-lg-6">
                                             <div class="form-group">
@@ -59,10 +59,10 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>   
+                                    </div>
                                 </div>
                                 </div>
-                                
+
                                 <div class="row">
                                 <div class="col-lg-12">
                                      <button type="submit"  class="btn btn-success"><i class="fa fa-check"></i> Avançar</button>

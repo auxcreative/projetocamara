@@ -75,7 +75,7 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	/*
+/*
 	'hostname' => 'camaracn.mysql.uhserver.com',
 	'username' => 'admlegiscn',
 	'password' => 'c1m1r1.2017',
@@ -85,7 +85,7 @@ $db['default'] = array(
 	'username' => 'root',
 	'password' => '',
 	'database' => 'coelhoneto',
-	
+
 	'dbdriver' => 'mysqli',
 	'dbprefix' => 'xon_',
 	'pconnect' => FALSE,

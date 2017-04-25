@@ -70,7 +70,7 @@ function init_site() {
 	set_tema('rodape', '<p class="rodape">Câmara Municipal de Coelho Neto - MA; 2017</p>');
 	set_tema('template', 'site_view');
 	set_tema('headerinc', load_css(array('bootstrap.min', 'font-awesome/css/font-awesome', 'app')), FALSE);
-	set_tema('footerinc', load_js(array('jquery.min', 'bootstrap.min')), FALSE);
+	set_tema('headerinc', load_js(array('jquery.min', 'bootstrap.min')), FALSE);
 }
 
 function init_main() {
@@ -88,8 +88,8 @@ function init_main() {
 	set_tema('titulo', 'X-ON PAINEL ADM');
 	set_tema('rodape', '<p class="rodape">X-ON &copy; 2016</p>');
 	set_tema('template', 'main_view');
-	set_tema('headerinc', load_css(array('ckeditor.samples', 'bootstrap.min', 'sb-admin', 'font-awesome/css/font-awesome', 'app', 'dataTables.bootstrap', 'dataTables.responsive')), FALSE);
-	set_tema('footerinc', load_js(array('ckeditor', 'ckeditor.sample', 'jquery-1.11.min', 'bootstrap.min', 'jquery.dataTables', 'dataTables.bootstrap.min')), FALSE);
+	set_tema('headerinc', load_css(array('bootstrap.min', 'sb-admin', 'font-awesome/css/font-awesome', 'app', 'dataTables.bootstrap', 'dataTables.responsive')), FALSE);
+	set_tema('footerinc', load_js(array('jquery-1.11.min', 'bootstrap.min', 'jquery.dataTables', 'dataTables.bootstrap.min')), FALSE);
 }
 
 //carrega um template passando uma array tem como parametro

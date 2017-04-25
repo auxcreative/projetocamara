@@ -4,28 +4,28 @@ class Vereador extends CI_Controller {
 
     public function __construct(){
         parent::__construct();
-        init_main();			
-    }    
+        init_main();
+    }
 	/**
 	 * X-On
 	 * Sistema: Portal da Transparencia - Coelho Neto
 	 * Controlador: partido
 	 */
-	 
+
 	 public function index(){
-	 	
+
 		$this->gerenciar();
 	 }
-	 	
+
 	public function gerenciar($offset=0, $limit=13)	{
-		
+
 		esta_logado();
-            
+
                 $parametrosItem = array(
                     "distinct" =>null,
-	            "select" => "xon_vereador.id, xon_vereador.nome, 
+	            "select" => "xon_vereador.id, xon_vereador.nome,
 	            			xon_vereador.id_partido, xon_vereador.status, xon_vereador.celular,
-                          xon_partido.nome_partido, xon_partido.sigla", 
+                          xon_partido.nome as nome_partido, xon_partido.sigla",
 	            "table" => "xon_vereador",
 	            "where" => array('vereador.status'=>'A'),
 	            "where_not_in"=>null,
@@ -35,9 +35,9 @@ class Vereador extends CI_Controller {
 	            "group_by" => "",
 	            "join" => array('xon_partido' => 'xon_partido.id = xon_vereador.id_partido')
                 );
-		
+
 	        $dados = getItem($parametrosItem)->result();
-               
+
                 if($dados != false) {
                     //carrega view com os dados buscados
                     $dados['vereadores'] = $dados;
@@ -52,40 +52,40 @@ class Vereador extends CI_Controller {
                     set_tema('conteudo', load_modulo_main($dados['pagina'], $dados), FALSE);
                     load_template();
                 }
-            
+
 
 	}
-        
+
         public function adicionar() {
         	esta_logado();
 			acesso('insert');
-			acesso('control');       	
+			acesso('control');
 
                 $this->form_validation->set_rules('p#nome','Nome','required|trim');
 
             if($this->form_validation->run()){
-					
-            	
+
+
 		// definimos o path onde o arquivo será gravado
         $path = "./uploads/biografias/";
- 
+
         // verificamos se o diretório existe
         // se não existe criamos com permissão de leitura e escrita
         if ( ! is_dir($path)) {
         mkdir($path, 0777, $recursive = true);
     }
- 
+
         // definimos as configurações para o upload
         // determinamos o path para gravar o arquivo
         $configUpload['upload_path']   = $path;
-        // definimos - através da extensão - 
+        // definimos - através da extensão -
         // os tipos de arquivos suportados
         $configUpload['allowed_types'] = 'jpeg|jpg|png|gif|pdf|zip|rar|doc|xls';
         // definimos que o nome do arquivo
- 
+
         // passamos as configurações para a library upload
         $this->upload->initialize($configUpload);
- 
+
         // verificamos se o upload foi processado com sucesso
         if ( ! $this->upload->do_upload('p#imagem'))
         {
@@ -99,40 +99,40 @@ class Vereador extends CI_Controller {
             //se correu tudo bem, recuperamos os dados do arquivo
             $data['dadosArquivo'] = $this->upload->data();
 
-		}   	
-		
+		}
+
 				$post = elements(array('p#status','p#nome','p#id_partido','p#biografia','p#logradouro','p#cep','p#cidade',
 				'p#lideranca_partido','p#legislatura','p#email','p#telefone_fixo','p#celular','p#site'), $this->input->post());
-				
+
 				$post['p#imagem'] = $data['dadosArquivo']['file_name'];
-				
+
 
                 setItem(null,"xon_vereador",$post, "main/vereador");
 
             } else {
-                                  
+
                     $parametrosPartido = array(
                         "distinct" =>null,
                         "select" => "*",
                         "table" => "xon_partido",
                         "where" => "",
                         "where_not_in"=>null,
-                        "order_by" => "nome_partido asc",
+                        "order_by" => "nome asc",
                         "like" => "",
                         "limit" => "",
                         "group_by" => "",
                         "join" => ""
                 );
-                
+
                 $dados['pagina'] = "novo_vereador";
                 $dados['partidos'] = getItem($parametrosPartido)->result();
-                
+
                 set_tema('tinymce', load_js(array('plugins/tinymce/tinymce.min','tinyMCE')), FALSE);
                 set_tema('conteudo', load_modulo_main($dados['pagina'], $dados));
                 load_template();
-            } 
+            }
 	}
-        
+
         public function editar($cod = null){
         	esta_logado();
 			acesso('edit');
@@ -143,32 +143,32 @@ class Vereador extends CI_Controller {
                 $this->form_validation->set_rules('p#id_partido','Partido','required|trim');
 
         if($this->form_validation->run()){
-        	
-			
-			
+
+
+
 			$post = elements(array('p#status','p#nome','p#id_partido','p#biografia', 'p#logradouro','p#cep','p#cidade',
 				'p#lideranca_partido','p#legislatura','p#email','p#telefone_fixo','p#celular','p#site'), $this->input->post());
-						
+
         // definimos o path onde o arquivo será gravado
         $path = "./uploads/biografias/";
- 
+
         // verificamos se o diretório existe
         // se não existe criamos com permissão de leitura e escrita
         if ( ! is_dir($path)) {
         mkdir($path, 0777, $recursive = true);
     }
- 
+
         // definimos as configurações para o upload
         // determinamos o path para gravar o arquivo
         $configUpload['upload_path']   = $path;
-        // definimos - através da extensão - 
+        // definimos - através da extensão -
         // os tipos de arquivos suportados
         $configUpload['allowed_types'] = 'jpeg|jpg|png|gif|pdf|zip|rar|doc|xls';
         // definimos que o nome do arquivo
- 
+
         // passamos as configurações para a library upload
         $this->upload->initialize($configUpload);
- 
+
         // verificamos se o upload foi processado com sucesso
         if ( ! $this->upload->do_upload('p#imagem'))
         {
@@ -179,15 +179,15 @@ class Vereador extends CI_Controller {
         }
         else
         {
-            
-			
+
+
             //se correu tudo bem, recuperamos os dados do arquivo
             $data['dadosArquivo'] = $this->upload->data();
 			$post['p#imagem'] = $data['dadosArquivo']['file_name'];
-			
 
-		}   	
-		
+
+		}
+
                     setItem($cod,"xon_vereador",$post, current_url());
 
                 } else {
@@ -195,7 +195,7 @@ class Vereador extends CI_Controller {
                     $parametrosItem = array(
                         "distinct" =>null,
                         "select" => "*",
-                        "table" => "xon_vereador",
+                        "table" => "vereador",
                         "where" => array("id" => decodificarString($cod)),
                         "where_not_in"=>null,
                         "order_by" => "",
@@ -204,38 +204,38 @@ class Vereador extends CI_Controller {
                         "group_by" => "",
                         "join" => ""
                     );
-					
+
                     $parametrosPartido = array(
                         "distinct" =>null,
                         "select" => "*",
-                        "table" => "xon_partido",
+                        "table" => "partido",
                         "where" => "",
                         "where_not_in"=>null,
-                        "order_by" => "nome_partido asc",
+                        "order_by" => "nome asc",
                         "like" => "",
                         "limit" => "",
                         "group_by" => "",
                         "join" => ""
                     );
 
-                    $dados['pagina'] = "editar_vereador";		
+                    $dados['pagina'] = "editar_vereador";
                     $dados['vereador'] = getItem($parametrosItem)->row();
                     $dados['partidos'] = getItem($parametrosPartido)->result();
-                    
+
                     set_tema('tinymce', load_js(array('plugins/tinymce/tinymce.min','tinyMCE')), FALSE);
                     set_tema('conteudo', load_modulo_main($dados['pagina'], $dados));
                     load_template();
-                } 
+                }
             }
 
         }
 
 	public function remover($cod = null){
-		
+
 		esta_logado();
 		acesso('del');
 		acesso('control');
-		
+
 		if($cod != null) {
 			$this->load->model('crud_model');
 			$cod = decodificarString($cod);
@@ -247,7 +247,7 @@ class Vereador extends CI_Controller {
                                         redirect("main/vereador");
 				} else {
 					//Carrega proxima view enviando erro para depuração  (array $result)
-					
+
 				}
 			}
 		} else {
@@ -255,5 +255,5 @@ class Vereador extends CI_Controller {
                         redirect("main/vereador");
 		}
 	}
-	
+
 }

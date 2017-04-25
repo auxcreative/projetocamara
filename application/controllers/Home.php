@@ -26,9 +26,9 @@ class Home extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see http://codeigniter.com/user_guide/general/urls.html
 	 */
-	public function index() {
-		
-		
+	public function index($cod=0) {
+
+
 		$Agenda = array(
                 "distinct" => null,
 	            "select" => "agenda.*, evento.id as eventos_id, evento.nome as nome_evento",
@@ -41,7 +41,7 @@ class Home extends CI_Controller {
 	            "group_by" => "",
 	            "join" => array("evento"=>'evento.id=agenda.id_evento')
         	);
-			
+
 		$notciasSlide = array(
                 "distinct" => null,
 	            "select" => "noticias.*,banco_de_imagem.url",
@@ -54,7 +54,7 @@ class Home extends CI_Controller {
 	            "group_by" => "",
 	            "join" => array("banco_de_imagem"=>'banco_de_imagem.code=noticias.code')
         	);
-			
+
 		$noticiasMais = array(
                 "distinct" => null,
 	            "select" => "*",
@@ -66,13 +66,43 @@ class Home extends CI_Controller {
 	            "limit" => array(2,0),
 	            "group_by" => "",
 	            "join" => ""
-        	);	
-			
+        	);
+
+					$parametrosItem = array(
+						"distinct"=>NULL,
+			            "select" => "*",
+			            "table" => "vereador",
+			            "where" => array('status'=>'A'),
+			            "where_not_in"=>null,
+			            "order_by" => "",
+			            "like" => array('legislatura'=>date('Y')),
+			            "limit" => "",
+			            "group_by" => "",
+			            "join" => ""
+			        );
+
+				$parametrosVereador = array(
+						"distinct"=>NULL,
+			            "select" => "*",
+			            "table" => "vereador",
+			            "where" => array('status'=>'A','id'=>decodificarString($cod)),
+			            "where_not_in"=>null,
+			            "order_by" => "",
+			            "like" => array('legislatura'=>date('Y')),
+			            "limit" => "",
+			            "group_by" => "",
+			            "join" => ""
+			        );
+
+					//Obem matriz com os dados
+					$dados['vereador'] = getItem($parametrosItem)->result();
+					$dados['vereadorLinha'] = getItem($parametrosVereador)->row();
+
 			$dados['agenda'] = getItem($Agenda)->result();
 			$dados['noticiasmais'] = getItem($noticiasMais)->result();
 			$dados['noticia'] = getItem($notciasSlide)->result();
-		
-		
+
+
 		set_tema('conteudo', load_modulo_site('view_inicio',$dados));
 		//set_tema('footerinc', load_js(array('loadPageDevoloper')), FALSE);
 		load_template();

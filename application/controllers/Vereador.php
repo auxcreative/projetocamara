@@ -1,7 +1,7 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 class Vereador extends CI_Controller {
-	
+
     public function __construct(){
 		parent::__construct();
 		init_site();
@@ -13,10 +13,10 @@ class Vereador extends CI_Controller {
 	 *
 	 * Maps to the following URL
 	 * 		http://example.com/index.php/welcome
-	 *	- or -  
+	 *	- or -
 	 * 		http://example.com/index.php/welcome/index
 	 *	- or -
-	 * Since this controller is set as the default controller in 
+	 * Since this controller is set as the default controller in
 	 * config/routes.php, it's displayed at http://example.com/
 	 *
 	 * So any other public methods not prefixed with an underscore will
@@ -24,8 +24,8 @@ class Vereador extends CI_Controller {
 	 * @see http://codeigniter.com/user_guide/general/urls.html
 	 */
 	public function index()	{
-		
-					$parametrosItem = array(
+
+		$parametrosItem = array(
 				"distinct"=>TRUE,
 	            "select" => "ano",
 	            "table" => "transparencia",
@@ -37,20 +37,20 @@ class Vereador extends CI_Controller {
 	            "group_by" => "",
 	            "join" => ""
 	        );
-			
+
 			//Obem matriz com os dados
 			$dadosItem = getItem($parametrosItem)->result();
-			
+
 
 			$dados['ano'] = $dadosItem;
 			set_tema('conteudo', load_modulo_site('view_vereador', $dados));
 			load_template();
-		
-		
+
+
 	}
-	
+
 	public function dados_e_contatos($cod = null){
-		
+
 			$parametrosItem = array(
 				"distinct"=>NULL,
 	            "select" => "*",
@@ -63,7 +63,7 @@ class Vereador extends CI_Controller {
 	            "group_by" => "",
 	            "join" => ""
 	        );
-			
+
 		$parametrosVereador = array(
 				"distinct"=>NULL,
 	            "select" => "*",
@@ -76,21 +76,21 @@ class Vereador extends CI_Controller {
 	            "group_by" => "",
 	            "join" => ""
 	        );
-			
+
 			//Obem matriz com os dados
 			$dados['vereador'] = getItem($parametrosItem)->result();
 			$dados['vereadorLinha'] = getItem($parametrosVereador)->row();
-			
+
 			set_tema('conteudo', load_modulo_site('view_vereador', $dados));
 			load_template();
-		
+
 	}
 
 	public function mesa_diretora($ano = null, $mes=null){
-				
-		
-		if($ano == null){ //Select de todas tuplas 
-		
+
+
+		if($ano == null){ //Select de todas tuplas
+
 			$parametrosItem = array(
 			    "distinct"=>TRUE,
 	            "select" => "mes",
@@ -103,20 +103,20 @@ class Vereador extends CI_Controller {
 	            "group_by" => "",
 	            "join" => ""
 	        );
-			
+
 			//Obem matriz com os dados
 			$dadosItem = getItem($parametrosItem)->result();
-			
+
 			//carrega view com os dados buscados
 			$dados['ano'] = $dadosItem;
 			set_tema('conteudo', load_modulo_site('view_prestacao_de_contas_mesa_diretora', $dados));
 			load_template();
 
-			
+
 		} else { //Select de tupla específica
-			
+
 			$parametrosAno = array(
-				"distinct"=>true,			
+				"distinct"=>true,
 	            "select" => "ano",
 	            "table" => "transparencia",
 	            "where"=> array('ano'=>$ano),
@@ -127,9 +127,9 @@ class Vereador extends CI_Controller {
 	            "group_by" => "",
 	            "join" => ""
         	);
-        	
-			$parametrosMes = array( //Select com filtro especifico	
-				"distinct"=>true,		
+
+			$parametrosMes = array( //Select com filtro especifico
+				"distinct"=>true,
 	            "select" => "mes, ano",
 	            "table" => "xon_transparencia",
 	            "where" => array('ano' => $ano),
@@ -140,8 +140,8 @@ class Vereador extends CI_Controller {
 	            "group_by" => "",
 	            "join" => ""
         	);
-			$parametrosContas = array( //Select com filtro especifico	
-				"distinct"=>false,		
+			$parametrosContas = array( //Select com filtro especifico
+				"distinct"=>false,
 	            "select" => "*",
 	            "table" => "transparencia",
 	            "where" => array('ano' => $ano, 'mes'=>$mes),
@@ -152,29 +152,29 @@ class Vereador extends CI_Controller {
 	            "group_by" => "",
 	            "join" => ""
         	);
-		
+
 		//Obem matriz com os dados
 		$dados['mes'] = getItem($parametrosMes)->result();
 		$dados['ano'] = getItem($parametrosAno)->result();
 		$dados['prestacao'] = getItem($parametrosContas)->result();
-			
-		
+
+
 		//carrega view com os dados buscados
 
 		set_tema('conteudo', load_modulo_site('view_prestacao_de_contas_mesa_diretora', $dados));
 		load_template();
 
 		}
-		
+
 	}
 
-	public function vereadores($cod = null, $id_vereador=null){		
+	public function vereadores($cod = null, $id_vereador=null){
 		$this->load->model('crud_model');
-		
-		if($cod == null && $id_vereador==null){ //Select de todas tuplas 
+
+		if($cod == null && $id_vereador==null){ //Select de todas tuplas
 
 		$parametrosItem = array(
-				"distinct"=>TRUE,			
+				"distinct"=>TRUE,
 	            "select" => "ano",
 	            "table" => "transparencia",
 	            "where_not_in"=>null,
@@ -185,9 +185,9 @@ class Vereador extends CI_Controller {
 	            "group_by" => "",
 	            "join" => ""
         	);
-			
-			$parametrosMes = array( //Select com filtro especifico	
-				"distinct"=>FALSE,		
+
+			$parametrosMes = array( //Select com filtro especifico
+				"distinct"=>FALSE,
 	            "select" => "*",
 	            "table" => "transparencia",
 	            "where" => array('ano' => $cod),
@@ -198,9 +198,9 @@ class Vereador extends CI_Controller {
 	            "group_by" => "",
 	            "join" => ""
         	);
-		
-		$parametrosContas = array( //Select com filtro especifico	
-				"distinct"=>TRUE,		
+
+		$parametrosContas = array( //Select com filtro especifico
+				"distinct"=>TRUE,
 	            "select" => "ano,mes,",
 	            "table" => "transparencia",
 	            "where" => array('ano' => $cod),
@@ -210,26 +210,26 @@ class Vereador extends CI_Controller {
 	            "limit" => "",
 	            "group_by" => "",
 	            "join" => ""
-        	);        				
-			
+        	);
+
 			//Obem matriz com os dados
 			$dados['ano'] = getItem($parametrosItem)->result();
 			$dados['mes']= getItem($parametrosMes)->result();
 			$dados['contas']= getItem($parametrosContas)->result();
-			
+
 
 			//carrega view com os dados buscados
 
-			
+
 			set_tema('conteudo', load_modulo_site('view_prestacao_de_contas_vereadores', $dados));
 			load_template();
-				
-			
-			
+
+
+
 		} else { //Select de tupla específica
-			
+
 			$parametrosItem = array(
-				"distinct"=>TRUE,			
+				"distinct"=>TRUE,
 	            "select" => "ano",
 	            "table" => "transparencia",
 	            "where"=>"",
@@ -240,9 +240,9 @@ class Vereador extends CI_Controller {
 	            "group_by" => "",
 	            "join" => ""
         	);
-			
-			$parametrosVereador = array( //Select com filtro especifico	
-				"distinct"=>TRUE,		
+
+			$parametrosVereador = array( //Select com filtro especifico
+				"distinct"=>TRUE,
 	            "select" => "*",
 	            "table" => "vereador",
 	            "where" => "",
@@ -253,9 +253,9 @@ class Vereador extends CI_Controller {
 	            "group_by" => "",
 	            "join" => ""
         	);
-        	
-			$parametrosFiltro = array( //Select com filtro especifico	
-				"distinct"=>FALSE,		
+
+			$parametrosFiltro = array( //Select com filtro especifico
+				"distinct"=>FALSE,
 	            "select" => "*",
 	            "table" => "vereador",
 	            "where" => "",
@@ -266,7 +266,7 @@ class Vereador extends CI_Controller {
 	            "group_by" => "",
 	            "join" => ""
         	);
-		
+
 		//Obem matriz com os dados
 		$dados['ano']  = getItem($parametrosItem)->result();
 		$dados['vereador'] = getItem($parametrosVereador)->result();
@@ -274,14 +274,14 @@ class Vereador extends CI_Controller {
 
 			set_tema('conteudo', load_modulo_site('view_prestacao_de_contas_vereadores', $dados));
 			load_template();
-				
-		}
-		
-	}
-	
 
-	
-	
+		}
+
+	}
+
+
+
+
 }
 
 

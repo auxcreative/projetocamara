@@ -15,12 +15,13 @@
                 </div>
                 <!-- /.row -->
 				<!-- AREA DE NOTIFICAÇÃO -->
-                
-                
-                
+
+
+
                 <!-- /.row -->
                 <div class="row">
                     <div class="col-lg-12">
+                      <?php echo get_msg('msgacesso'); ?>
                         <div class="panel panel-default">
                             <div class="panel-body">
                                 <div class="table-responsive">
@@ -35,14 +36,14 @@
                                                 <th width="9%">Ações</th>
                                             </tr>
                                         </thead>
-                                     
+
                                         <?php foreach($partidos as $partido): ?>
                                             <tr>
                                                 <td>
-                                                <img src="<?php echo base_url("uploads/partidos/".$partido->imagem); ?>" width="40" height="32" />	
-  
+                                                <img src="<?php echo base_url("uploads/partidos/".$partido->imagem); ?>" width="40" height="32" />
+
                                                 	</td>
-                                                <td><?php print $partido->nome_partido; ?></td>
+                                                <td><?php print $partido->nome; ?></td>
                                                 <td><?php print $partido->sigla; ?></td>
                                                 <td><?php print $partido->status; ?></td>
                                                 <td>
@@ -67,6 +68,3 @@
                     </div>
                 </div>
                 <!-- /.row -->
-
-
-

@@ -86,7 +86,7 @@
                                 <div class="col-lg-12">
                                 	<div class="form-group">
                                             <label>Texto da Notícia:</label>
-                                            <textarea name="p#texto" class="form-control" style="img {margin:5px}" id="editor" rows="8"><?php echo  $noticia->texto;  ?></textarea>
+                                            <textarea name="p#texto" class="form-control" id="editor" rows="10"><?php echo  $noticia->texto;  ?></textarea>
                                     </div>
                                     <button type="submit" class="btn btn-success"><i class="fa fa-check"></i> Alterar Notícia</button>
                                 	<a href="<?php echo base_url('main/noticias') ?>" class="btn btn-default"><span class="glyphicon glyphicon-triangle-left" ></span> Voltar</a>

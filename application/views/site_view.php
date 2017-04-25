@@ -56,7 +56,7 @@
   		<div class="col-md-3">
   		<div class="list-group">
   		<a href="#" class="list-group-item active">
-    	<strong><span class="icon-caret-left"></span>Instituíção</strong>
+    	<strong>Instituíção</strong>
   		</a>
   		<a href="<?php echo base_url('instituicao/presidencia_da_camara'); ?>" class="list-group-item">Presidente da Câmara</a>
   		<!-- Retirar momentaneamente

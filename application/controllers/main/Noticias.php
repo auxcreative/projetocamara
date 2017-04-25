@@ -112,8 +112,6 @@ class Noticias extends CI_Controller {
 
             if($this->form_validation->run()){
 
-                				
-				
 				$_POST['p#data_postagem'] = load_data($_POST['p#data_postagem']);
 				$_POST['p#slug'] = str_replace(' ', '-', convert_accented_characters(strtolower($_POST['p#titulo'])));
 				$_POST['p#resumo'] =$_POST['p#resumo'];
@@ -122,7 +120,6 @@ class Noticias extends CI_Controller {
 							
                 setItem(null,"xon_noticias",$_POST, "main/noticias");
 				
-
             } else {
             	
 	           $parametrosItem = array(
@@ -141,8 +138,8 @@ class Noticias extends CI_Controller {
 	        	$dados['banco'] = getItem($parametrosItem)->result();
 				
                 $dados['pagina'] = "nova_noticia";
-
-                set_tema('headerinc', load_js(array('plugins/tinymce/tinymce.min','tinyMCE')), FALSE);
+				set_tema('headerinc', load_css(array('summernote')), FALSE);
+				set_tema('footerinc', load_js(array('summernote.min','ckEditorload')), FALSE);                
                 set_tema('conteudo', load_modulo_main($dados['pagina'], $dados));
                 load_template();
             } 
@@ -206,8 +203,8 @@ class Noticias extends CI_Controller {
 				
 				$dados['banco'] = getItem($parametrosCode)->result();		
                 
-                
-                set_tema('headerinc', load_js(array('plugins/tinymce/tinymce.min','tinyMCE')), FALSE);
+				set_tema('headerinc', load_css(array('summernote')), FALSE);
+				set_tema('footerinc', load_js(array('summernote.min','ckEditorload')), FALSE);        
                 set_tema('conteudo', load_modulo_main($dados['pagina'], $dados));
                 load_template();
             } 
@@ -242,6 +239,38 @@ class Noticias extends CI_Controller {
 			
 		
 	}
+	
+	
+	 public function load_imagem() {
+
+
+            	                	
+		// definimos o path onde o arquivo será gravado
+        $path = "./uploads/noticias/";
+ 
+        // verificamos se o diretório existe
+        // se não existe criamos com permissão de leitura e escrita
+        if ( ! is_dir($path)) {
+        mkdir($path, 0777, $recursive = true);
+    }
+ 
+        // definimos as configurações para o upload
+        // determinamos o path para gravar o arquivo
+        $configUpload['upload_path']   = $path;
+        // definimos - através da extensão - 
+        // os tipos de arquivos suportados
+        $configUpload['allowed_types'] = 'jpeg|jpg|png|gif|pdf|zip|rar|doc|xls|docx|xlsx';
+        // definimos que o nome do arquivo
+ 
+        // passamos as configurações para a library upload
+        $this->upload->initialize($configUpload);
+ 		
+        //se correu tudo bem, recuperamos os dados do arquivo
+        $this->upload->data();			
+
+            
+	}
+	
 
         public function banco_de_imagem($cod='') {
 
@@ -291,7 +320,7 @@ class Noticias extends CI_Controller {
 			
 			$url_volta = ($cod != '') ? 'main/noticias/editar/'.$cod : 'main/noticias/adicionar';
 						
-            setItem(null,"xon_banco_de_imagem",$_POST, $url_volta);
+            setItem(null,"banco_de_imagem",$_POST, $url_volta);
             
 	}
 }

@@ -5,6 +5,6 @@
 
 <div class="row">
 <span class="glyphicon glyphicon-save-file"></span>	
-<a href="<?php echo base_url('instituicao/download/documentos/regimento_interno.pdf'); ?>">Acesse o Regimento Interneto</a>
+<a href="<?php echo base_url('instituicao/download/documentos/regimento_interno.pdf'); ?>">Acesse o Regimento Interto</a>
  
 </div>
