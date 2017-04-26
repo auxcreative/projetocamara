@@ -83,7 +83,7 @@ $db['default'] = array(
 	*/
 	'hostname' => 'localhost',
 	'username' => 'root',
-	'password' => '',
+	'password' => 'aux',
 	'database' => 'coelhoneto',
 
 	'dbdriver' => 'mysqli',

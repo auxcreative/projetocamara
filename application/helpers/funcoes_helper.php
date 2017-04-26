@@ -69,8 +69,8 @@ function init_site() {
 	set_tema('titulo', 'Câmara Mul. de Coelho Neto');
 	set_tema('rodape', '<p class="rodape">Câmara Municipal de Coelho Neto - MA; 2017</p>');
 	set_tema('template', 'site_view');
-	set_tema('headerinc', load_css(array('bootstrap.min', 'font-awesome/css/font-awesome', 'app')), FALSE);
-	set_tema('headerinc', load_js(array('jquery.min', 'bootstrap.min')), FALSE);
+	set_tema('headerinc', load_css(array('font-awesome/css/font-awesome','bootstrap.min', 'app')), FALSE);
+	set_tema('footerinc', load_js(array('jquery.min', 'bootstrap.min')), FALSE);
 }
 
 function init_main() {

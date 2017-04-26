@@ -19,15 +19,20 @@
     
   </head>
   <body>
-
-		<div class="row topslide">
-		<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-		<div class="container logo-topbar">
-  			<div class="col-sm-2 col-md-2 col-xs-4 hidden-xs">
-  				<img src="<?php echo base_url('images/camara-logo-circle.png'); ?>" class="img-responsive" />
-  			</div>	
-  	<div class="col-sm-3 col-xs-12 pull-right portal-transparencia">
-		<!-- Single button -->
+  	<div class="conteudo container">
+  		<div class="row bar-top">
+  			<div class="col-md-3 col-sm-6 box-top">
+  				<div class="row thumbnail logo">
+  				<a href="<?php echo base_url(); ?>">
+  				<img src="<?php echo base_url('images/brasao-camara-coelhoneto.png'); ?>" />
+  				</a>
+  				</div>
+  				<div class="row texto">
+  				<h6><?php echo 'Coelho Neto, 18 de Outubro de 2016'; ?></h6> 
+  				</div>				
+  			</div>
+ 
+  				<!-- Single button -->
 <div class="btn-group float-right transparencia">
   <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
    <img src="<?php echo base_url('images/transparencia-icon.png') ?>" /> Portal Transparência <span class="caret"></span>
@@ -36,25 +41,17 @@
     <li><?php echo anchor(base_url('lei_de_acesso_a_informacao'),'Lei de acesso à informação') ?></li>
     <li role="separator" class="divider"></li>
     <li><?php echo anchor('http://barrosoptr.dcfiorilli.com.br:2024/SCPIWEB_CMCOELHONETO/','Prestação de contas') ?></li>
+    <!--
+    <li><?php echo anchor(base_url('prestacao_de_contas/orcamentos_e_financas'),'Orçamentos e finanças') ?></li>
+    <li><?php echo anchor(base_url('prestacao_de_contas/licitacoes_e_contratos'),'Licitações e contratos') ?></li>
+    -->
     <li role="separator" class="divider"></li>
     <li><?php echo anchor(base_url('prestacao_de_contas/recursos_humanos'),'Recursos Humanos') ?></li>
     <li><?php echo anchor(base_url('prestacao_de_contas/atos_administrativos'),'Atos administartivos') ?></li>
    </ul>
 </div>
-</div>				
-		</div>
-			<!-- Wrapper for slides -->
-				<div class="carousel-inner" role="listbox">
-					<div class="item active">
-						<img src="<?php echo base_url('uploads/topbar/bamboo.jpg') ?>" alt="...">
-					</div>
-					<div class="item">
-						<img src="<?php echo base_url('uploads/topbar/coelhoneto.jpg') ?>" alt="...">
-				</div>
-			</div>
-		</div>
-  	
-  	<div class="conteudo container">
+</div>
+
   		<div class="row">
   		<div class="col-md-3">
   		<div class="list-group">
@@ -95,4 +92,3 @@
     {footerinc}
   </body>
 </html>
-
