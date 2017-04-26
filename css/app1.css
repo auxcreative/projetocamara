@@ -1,0 +1,18 @@
+.transparencia {padding-top:40px}.borda-color {border-bottom: 1px solid #4000A0}
+.bar-top, .box-top {padding-bottom:0; margin-bottom: 0}
+.bar-top img {border: none; padding-bottom:0; margin-bottom:0}
+.bar-top, .texto {color:#CCCCCC; margin:0; padding:0; text-align: right; line-height: 0.9em }
+.item {height:350px}
+.item img {min-height: 100%; min-width: 100%}
+.logo, .thumbnail {border:none}
+.agenda {padding-left:15px}
+.agenda, .panel {height:392px}
+.agenda h2 {font-weight:bold; font-size:1.5em; color:#4000A0; line-height: 1.0em; margin-top:0}
+.agenda p {line-height: 0.9em; color: #666666}
+.hora {border-bottom:1px solid #CCCCCC; margin-top:0; padding-top:0}
+.evento {margin-bottom:15px; padding-top:10px}
+.borda {border:1px solid #000000}
+.plano-diretor img { min-width: 100% }
+.plano-diretor a {position: absolute; top: 80%; left:20px;}
+#plenario, #social {padding:20px 10px}.imagem {margin: 8px !important}
+

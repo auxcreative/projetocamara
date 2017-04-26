@@ -1,0 +1,6 @@
+
+.borda {border:1px solid #000000}
+.item {height:220px}
+.item img {background-image: center}
+.logo-topbar { z-index: 1; position:absolute; left:8%; top:15.5% !important}
+.portal-transparencia {margin-top: 4%}
