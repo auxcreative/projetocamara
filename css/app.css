@@ -1,6 +1,14 @@
 
 .borda {border:1px solid #000000}
-.item {height:220px}
-.item img {background-image: center}
-.logo-topbar { z-index: 1; position:absolute; left:8%; top:15.5% !important}
-.portal-transparencia {margin-top: 4%}
+.conteudo {margin-top:15px}
+.topslide .item {max-height:220px}
+.topslide .item img {background-image: center}
+.topbar { width:90%; z-index: 1; position:absolute; margin-left:5%; margin-right:5%; top:0 !important}
+.logo-topbar {padding-top: 2%}
+.portal-transparencia {margin-top: 5%}
+#home {margin-bottom:15px}
+#home .item {height:350px}
+.agenda, .panel {max-height:392px}
+.agenda h2 {font-weight:bold; font-size:1.5em; color:#4000A0; line-height: 1.0em; margin-top:0}
+.agenda p {line-height: 0.9em; color: #666666}
+

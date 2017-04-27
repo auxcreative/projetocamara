@@ -21,16 +21,19 @@
   <body>
 
 		<div class="row topslide">
-		<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-		<div class="container logo-topbar">
-  			<div class="col-sm-2 col-md-2 col-xs-4 hidden-xs">
+
+		<div id="carousel-topo" class="carousel slide" data-ride="carousel">
+		<div class="col-sm-12 topbar">
+			<div class="row">			
+			<div class="col-sm-2 col-md-2 hidden-xs logo-topbar">
   				<img src="<?php echo base_url('images/camara-logo-circle.png'); ?>" class="img-responsive" />
   			</div>	
-  	<div class="col-sm-3 col-xs-12 pull-right portal-transparencia">
+ 
 		<!-- Single button -->
-<div class="btn-group float-right transparencia">
+<div class="col-sm-2 col-sm-offset-7 col-md-2 col-md-offset-8 col-xs-6 col-xs-offset-6 portal-transparencia">
+<div class="btn-group pull-right">
   <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-   <img src="<?php echo base_url('images/transparencia-icon.png') ?>" /> Portal Transparência <span class="caret"></span>
+   <img src="<?php echo base_url('images/transparencia-icon.png') ?>" />&nbsp;Transparência&nbsp;<span class="caret"></span>
   </button>
   <ul class="dropdown-menu">
     <li><?php echo anchor(base_url('lei_de_acesso_a_informacao'),'Lei de acesso à informação') ?></li>
@@ -41,22 +44,60 @@
     <li><?php echo anchor(base_url('prestacao_de_contas/atos_administrativos'),'Atos administartivos') ?></li>
    </ul>
 </div>
-</div>				
-		</div>
+
+</div>
+	</div>		
+</div>
 			<!-- Wrapper for slides -->
 				<div class="carousel-inner" role="listbox">
 					<div class="item active">
-						<img src="<?php echo base_url('uploads/topbar/bamboo.jpg') ?>" alt="...">
+						<img src="<?php echo base_url('uploads/topbar/cidade2.jpg') ?>" alt="...">
 					</div>
 					<div class="item">
-						<img src="<?php echo base_url('uploads/topbar/coelhoneto.jpg') ?>" alt="...">
+						<img src="<?php echo base_url('uploads/topbar/cidade1.jpg') ?>" alt="...">
 				</div>
 			</div>
-		</div>
-  	
+		</div> 	
+  		</div>  
+  	<div class="row">		
+  	  <nav class="navbar navbar-default hidden-lg hidden-md">
+        <div class="container-fluid ">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#"><img class="img-responsive" src="<?php echo base_url('images/brasao-icon.png') ?>" width="20" height="21" /> </a>
+          </div>
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+              <li class="active"><a href="#">Home</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Contact</a></li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="#">Action</a></li>
+                  <li><a href="#">Another action</a></li>
+                  <li><a href="#">Something else here</a></li>
+                  <li role="separator" class="divider"></li>
+                  <li class="dropdown-header">Nav header</li>
+                  <li><a href="#">Separated link</a></li>
+                  <li><a href="#">One more separated link</a></li>
+                </ul>
+              </li>
+            </ul>
+           
+          </div><!--/.nav-collapse -->
+        </div><!--/.container-fluid -->
+      </nav>
+  	</div>
+
   	<div class="conteudo container">
   		<div class="row">
-  		<div class="col-md-3">
+  		<div class="col-md-3 hidden-sm hidden-xs">
   		<div class="list-group">
   		<a href="#" class="list-group-item active">
     	<strong>Instituíção</strong>
