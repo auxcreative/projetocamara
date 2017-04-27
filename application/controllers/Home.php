@@ -44,13 +44,13 @@ class Home extends CI_Controller {
 
 		$notciasSlide = array(
                 "distinct" => null,
-	            "select" => "noticias.*,banco_de_imagem.url",
+	            "select" => "noticias.*, banco_de_imagem.url",
 	            "table" => "noticias",
 	            "where" => "",
 	            "where_not_in"=>null,
 	            "order_by" => "id desc",
 	            "like" => "",
-	            "limit" => array(3,3),
+	            "limit" => array(3,0),
 	            "group_by" => "",
 	            "join" => array("banco_de_imagem"=>'banco_de_imagem.code=noticias.code')
         	);

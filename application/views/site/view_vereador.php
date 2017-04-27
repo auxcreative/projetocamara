@@ -19,7 +19,8 @@
 		else:
  ?>
 		<div class="row">
-			<div class="col-md-3 col-md-offset-4">
+			<div class="col-sm-12">
+			<div class="col-sm-3 col-sm-offset-4 col-xs-12">
 				<div class="row">
 				<div class="thumbnail">
 				<img src="<?php echo base_url('uploads/biografias/'.$vereadorLinha->imagem)  ?>" alt="<?php echo $vereadorLinha -> nome; ?>">	
@@ -42,9 +43,8 @@
 <a href="<?php echo base_url('vereador/dados_e_contatos') ?>">Voltar</a>
 				</div>
 			</div>
-		
-	</div>
 	<?php endif; ?>
+	</div>
 </div>
-
+</div>
 </div>
