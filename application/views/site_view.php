@@ -26,7 +26,9 @@
 		<div class="col-sm-12 topbar">
 			<div class="row">			
 			<div class="col-sm-2 col-md-2 hidden-xs logo-topbar">
+				<a href="<?php echo base_url(); ?>">
   				<img src="<?php echo base_url('images/camara-logo-circle.png'); ?>" class="img-responsive" />
+  			</a>
   			</div>	
  
 		<!-- Single button -->
@@ -39,9 +41,12 @@
     <li><?php echo anchor(base_url('lei_de_acesso_a_informacao'),'Lei de acesso à informação') ?></li>
     <li role="separator" class="divider"></li>
     <li><?php echo anchor('http://barrosoptr.dcfiorilli.com.br:2024/SCPIWEB_CMCOELHONETO/','Prestação de contas') ?></li>
+    
+    <li><?php echo anchor('http://barrosoptr.dcfiorilli.com.br:2024/SCPIWEB_CMCOELHONETO/','Licitações e Contratos') ?></li>
+    <li><?php echo anchor('http://barrosoptr.dcfiorilli.com.br:2024/SCPIWEB_CMCOELHONETO/','Despesas e Receitas') ?></li>
+    <li><?php echo anchor('http://barrosoptr.dcfiorilli.com.br:2024/SCPIWEB_CMCOELHONETO/','Recursos Humanos') ?></li>
     <li role="separator" class="divider"></li>
-    <li><?php echo anchor(base_url('prestacao_de_contas/recursos_humanos'),'Recursos Humanos') ?></li>
-    <li><?php echo anchor(base_url('prestacao_de_contas/atos_administrativos'),'Atos administartivos') ?></li>
+    <li><?php echo anchor(base_url('atos_administrativos'),'Atos administartivos') ?></li>
    </ul>
 </div>
 
@@ -60,8 +65,8 @@
 		</div> 	
   		</div>  
   	<div class="row">		
-  	  <nav class="navbar navbar-default hidden-lg hidden-md">
-        <div class="container-fluid ">
+  	  <nav class="navbar navbar-default hidden-md">
+        <div class="container-fluid">
           <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
               <span class="sr-only">Toggle navigation</span>
@@ -69,7 +74,7 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#"><img class="img-responsive" src="<?php echo base_url('images/brasao-icon.png') ?>" width="20" height="21" /> </a>
+            <a class="navbar-brand" href="<?php echo base_url(); ?>"><img src="<?php echo base_url('images/brasao-icon.png') ?>" width="20" height="21" /> </a>
           </div>
           <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">

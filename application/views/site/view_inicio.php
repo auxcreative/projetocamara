@@ -85,6 +85,7 @@ if (!defined('BASEPATH'))
     </div>
     <div class="tab-pane" role="tabpanel" id="aovivo">
     	<h4>VEJA AO VIVO</h4>
+    	
     </div>
   </div>
 	</div>
@@ -96,7 +97,7 @@ if (!defined('BASEPATH'))
 <div class="col-sm-12">
 <div class="panel panel-primary">
   <div class="panel-heading">
-    <h3 class="panel-title"><span class="glyphicon glyphicon-calendar"></span> Agenda Semanal</h3>
+    <h3 class="panel-title"><span class="glyphicon glyphicon-calendar"></span> Agenda </h3>
   </div>
   <div class="panel-body">
       <?php foreach ($agenda as $itemAgenda) : ?>
@@ -110,7 +111,12 @@ if (!defined('BASEPATH'))
 		</div>
 	</div>
       <?php endforeach; ?>
-	<a href="<?php echo base_url('agenda') ?>" class="btn btn-primary"><span class="glyphicon glyphicon-triangle-right"></span> Agenda Completa</a>
+    <div class="row">
+    <div class="col-sm-12">
+	<a href="<?php echo base_url('agenda') ?>" class="btn btn-primary">
+		<span class="glyphicon glyphicon-triangle-right"></span> Veja Mais</a>
+  </div>
+  </div>
   </div>
 </div>
 </div>
@@ -119,9 +125,9 @@ if (!defined('BASEPATH'))
 </div>
 
 <div class="row">
-<div class="col-md-7 col-sm-7">
+<div class="col-md-6 col-sm-6">
 <div class="row news">
-	<div class="col-sm-12">
+<div class="col-sm-12">
 	<h3>Últimas Noticias</h3>
 <dl>
 <?php foreach($noticiasmais as $mais): ?>
@@ -131,55 +137,53 @@ if (!defined('BASEPATH'))
 </dl>
 </div>
 </div>
-<div class="row">
-<div class="col-sm-9">
-	<div class="row">
+
+<div class="row">	
 	<div class="col-sm-12">
 	<h3>Vereadores</h3>
 	<?php foreach ($vereador as $value): ?>
-	<div class="col-sm-4 col-xs-6">
-		<div class="thumbnail">
-			<a href="<?php echo base_url('vereador/dados_e_contatos/' . codificarString($value -> id)); ?>">
+	<div class="col-sm-4 col-xs-6">			
+			<a class="thumbnail" href="<?php echo base_url('vereador/dados_e_contatos/' . codificarString($value -> id)); ?>">
 			<img src="<?php echo base_url('uploads/biografias/'.$value->imagem)  ?>" alt="<?php echo $value -> nome; ?>">
-			</a>
-		</div>
-	</div>
+			</a>			
+			</div>
 	<?php endforeach; ?>
 </div>
 </div>
 </div>
-</div>
-</div>
 
-<div class="col-sm-5">
+<div class="col-sm-6 col-md-6">
 	<div class="row">
 	<div class="col-sm-12">
-				<div class="text-center">
-			<h3>Fale com a câmara</h3>
-		</div>
-	<form class="form-horizontal">		
+			<h3>Fale com a Câmara</h3>
+	<form class="form-horizontal">				
 	<div class="form-group">
-    <label class="col-sm-2 control-label">Nome</label>
-    <div class="col-sm-10">
+    <label class="col-sm-3 control-label">Nome</label>
+    <div class="col-sm-9">
       <input type="text" class="form-control" id="" placeholder="Nome">
     </div>
   </div>	
+  
   <div class="form-group">
-    <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
-    <div class="col-sm-10">
+    <label for="inputEmail3" class="col-sm-3 control-label">Email</label>
+    <div class="col-sm-9">
       <input type="email" class="form-control" id="" placeholder="Email">
     </div>
   </div>
+  
   <div class="form-group">
-    <div class="col-sm-10 col-sm-offset-2">
-     		<textarea class="form-control" placeholder="Digite sua mensagem"></textarea
+  	<label for="inputEmail3" class="col-sm-3 control-label">Mensagem</label>
+    <div class="col-sm-9">    	
+     		<textarea class="form-control" placeholder="Digite sua mensagem">&nbsp;</textarea>
     </div>
   </div>
-<div class="form-group">
-    <div class="col-sm-offset-2 col-sm-10">
-      <button type="submit" class="btn btn-default">Sign in</button>
+  
+<div class="form-group">	
+    <div class="col-sm-9 col-sm-offset-3">
+      <button type="submit" class="btn btn-default">Enviar</button>
     </div>
   </div>
+  
 </form>
 </div>
 </div>
