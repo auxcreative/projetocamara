@@ -99,11 +99,7 @@
                                 </div>
                                 </div>
                                 <div class="row">
-                                <div class="col-lg-4">
-                                    <label>Biografia: </label>
-                                    <textarea name="p#biografia" rows="4" class="form-control" ><?php print $vereador->biografia ?></textarea>
-                                </div>
-                                <div class="col-lg-8">
+                                <div class="col-lg-7">
                                     <div class="row">
                                         <div class="col-lg-4">
                                             <div class="form-group">
@@ -124,22 +120,28 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="row">
-                                        <div class="col-lg-6">
-                                                <label>Site: </label>
-                                                <input class="form-control"  value="<?php print $vereador->site ?>" name="p#site" placeholder="">
-                                        </div>
                                     </div>
-                                </div>
-                                </div>
-                                  <div class="row">
-                                    	<div class="col-md-4">
+                                    
+                                    	</div>
+                                    <div class="row">
+                                    	<div class="col-md-5">
                                             <div class="form-group">
                                                 <label>Legislatura: </label>
                                                 <textarea class="form-control" name="p#legislatura" ><?php print $vereador->legislatura ?></textarea>
                                             </div>
                                     	</div>
-                                    </div>
+                                        <div class="col-lg-6">
+                                                <label>Site: </label>
+                                                <input class="form-control"  value="<?php print $vereador->site ?>" name="p#site" placeholder="">
+                                        </div>                                
+                                </div>
+                                  <div class="row">
+                                 <div class="col-lg-12">
+                                    <label>Biografia: </label>
+                                    <textarea name="p#biografia" rows="4" class="form-control" id="editor" ><?php print $vereador->biografia ?></textarea>
+                                </div>
+                             	
+                                  </div>
                                 <div class="row">
                                 <div class="col-lg-12">
                                     <button type="submit" class="btn btn-success"><i class="fa fa-check"></i> Avançar</button>

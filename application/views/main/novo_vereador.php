@@ -13,11 +13,6 @@
                     </div>
                 </div>
                 <!-- /.row -->
-				<!-- AREA DE NOTIFICAÇÃO -->
-
-
-
-                <!-- /.row -->
                 <div class="row">
                     <div class="col-lg-12">
 
@@ -105,11 +100,11 @@
                                 </div>
                                 </div>
                                 <div class="row">
-                                <div class="col-lg-4">
+                                <div class="col-lg-5">
                                     <label>Biografia: </label>
                                     <textarea name="p#biografia" rows="4" class="form-control"></textarea>
                                 </div>
-                                <div class="col-lg-8">
+                                <div class="col-lg-7">
                                     <div class="row">
                                         <div class="col-lg-4">
                                             <div class="form-group">

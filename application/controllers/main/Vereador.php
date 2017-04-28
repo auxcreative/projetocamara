@@ -114,7 +114,7 @@ class Vereador extends CI_Controller {
                     $parametrosPartido = array(
                         "distinct" =>null,
                         "select" => "*",
-                        "table" => "xon_partido",
+                        "table" => "partido",
                         "where" => "",
                         "where_not_in"=>null,
                         "order_by" => "nome asc",
@@ -127,7 +127,8 @@ class Vereador extends CI_Controller {
                 $dados['pagina'] = "novo_vereador";
                 $dados['partidos'] = getItem($parametrosPartido)->result();
 
-                set_tema('tinymce', load_js(array('plugins/tinymce/tinymce.min','tinyMCE')), FALSE);
+				set_tema('headerinc', load_css(array('summernote')), FALSE);
+				set_tema('footerinc', load_js(array('summernote.min','ckEditorload')), FALSE);    
                 set_tema('conteudo', load_modulo_main($dados['pagina'], $dados));
                 load_template();
             }
@@ -222,7 +223,8 @@ class Vereador extends CI_Controller {
                     $dados['vereador'] = getItem($parametrosItem)->row();
                     $dados['partidos'] = getItem($parametrosPartido)->result();
 
-                    set_tema('tinymce', load_js(array('plugins/tinymce/tinymce.min','tinyMCE')), FALSE);
+                    set_tema('headerinc', load_css(array('summernote')), FALSE);
+					set_tema('footerinc', load_js(array('summernote.min','ckEditorload')), FALSE);    
                     set_tema('conteudo', load_modulo_main($dados['pagina'], $dados));
                     load_template();
                 }

@@ -75,17 +75,17 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-/*
+	
 	'hostname' => 'camaracn.mysql.uhserver.com',
 	'username' => 'admlegiscn',
 	'password' => 'c1m1r1.2017',
 	'database' => 'camaracn',
-	*/
+/*
 	'hostname' => 'localhost',
 	'username' => 'root',
 	'password' => 'aux',
 	'database' => 'coelhoneto',
-
+*/
 	'dbdriver' => 'mysqli',
 	'dbprefix' => 'xon_',
 	'pconnect' => FALSE,

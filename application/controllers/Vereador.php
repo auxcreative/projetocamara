@@ -25,26 +25,7 @@ class Vereador extends CI_Controller {
 	 */
 	public function index()	{
 
-		$parametrosItem = array(
-				"distinct"=>TRUE,
-	            "select" => "ano",
-	            "table" => "transparencia",
-	            "where" => "",
-	            "where_not_in"=>null,
-	            "order_by" => "",
-	            "like" => "",
-	            "limit" => "",
-	            "group_by" => "",
-	            "join" => ""
-	        );
-
-			//Obem matriz com os dados
-			$dadosItem = getItem($parametrosItem)->result();
-
-
-			$dados['ano'] = $dadosItem;
-			set_tema('conteudo', load_modulo_site('view_vereador', $dados));
-			load_template();
+		$this->dados_e_contatos();
 
 
 	}
@@ -277,6 +258,44 @@ class Vereador extends CI_Controller {
 
 		}
 
+	}
+	
+	
+	public function biografia($cod=null){
+				
+			$parametrosItem = array(
+				"distinct"=>NULL,
+	            "select" => "*",
+	            "table" => "vereador",
+	            "where" => array('status'=>'A'),
+	            "where_not_in"=>null,
+	            "order_by" => "",
+	            "like" => array('legislatura'=>date('Y')),
+	            "limit" => "",
+	            "group_by" => "",
+	            "join" => ""
+	        );
+
+		$parametrosVereador = array(
+				"distinct"=>NULL,
+	            "select" => "*",
+	            "table" => "vereador",
+	            "where" => array('status'=>'A','id'=>decodificarString($cod)),
+	            "where_not_in"=>null,
+	            "order_by" => "",
+	            "like" => array('legislatura'=>date('Y')),
+	            "limit" => "",
+	            "group_by" => "",
+	            "join" => ""
+	        );
+
+			//Obem matriz com os dados
+			$dados['vereador'] = getItem($parametrosItem)->result();
+			$dados['vereadorLinha'] = getItem($parametrosVereador)->row();
+
+			set_tema('conteudo', load_modulo_site('view_vereador_biografia', $dados));
+			load_template();			
+		
 	}
 
 
