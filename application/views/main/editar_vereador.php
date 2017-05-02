@@ -63,9 +63,11 @@
                                                 <label>Partido: </label>
                                                 <select required="" class="form-control" name="p#id_partido">
                                                     <option value="" >--- Selecione um partido ----</option>
+                                                    
                                                     <?php foreach ($partidos as $partido): ?>
-                                                    <option <?php if($vereador->id_partido == $partido->id) {print "selected";} ?>  value="<?php print $partido->id; ?>"><?php print $partido->nome; ?> (<?php print $partido->sigla; ?>)</option>
+                                                    <option <?php if($vereador->id_partido == $partido->id) {echo "selected";} ?>  value="<?php echo $partido->id; ?>"><?php echo $partido->nome; ?> (<?php echo $partido->sigla; ?>)</option>
                                                     <?php endforeach; ?>
+                                                    
                                                 </select>
                                             </div>
                                         </div>

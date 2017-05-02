@@ -19,6 +19,7 @@
                 <!-- /.row -->
                 <div class="row">
                     <div class="col-lg-12">
+                    	<?php get_msg('msgerro') ?>
                         <div class="panel panel-default">
                             <div class="panel-body">
                                 <div class="table">

@@ -134,7 +134,7 @@ class Vereador extends CI_Controller {
             }
 	}
 
-        public function editar($cod = null){
+        public function editar($cod = null, $outro){
         	esta_logado();
 			acesso('edit');
 
@@ -212,7 +212,7 @@ class Vereador extends CI_Controller {
                         "table" => "partido",
                         "where" => "",
                         "where_not_in"=>null,
-                        "order_by" => "nome asc",
+                        "order_by" => "nome desc",
                         "like" => "",
                         "limit" => "",
                         "group_by" => "",
@@ -228,6 +228,13 @@ class Vereador extends CI_Controller {
                     set_tema('conteudo', load_modulo_main($dados['pagina'], $dados));
                     load_template();
                 }
+            }  else {
+				
+				//SE o id não for passado
+				
+				set_msg('msgerro', 'Não foi enviado nenhum vereador para editar!', 'danger');
+				redirect(base_url('main/vereador'));
+				
             }
 
         }
