@@ -8,6 +8,7 @@ h4,
 h5,
 h6 {
   font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif; }
+  
 hr {border: 1.8px double #CCCCCC; width: 80px}
 .borda {border:1px solid #000000}
 .conteudo {margin-top:15px}
@@ -20,4 +21,7 @@ hr {border: 1.8px double #CCCCCC; width: 80px}
 .agenda, .panel {max-height:392px}
 .agenda h2 {font-weight:bold; font-size:1.5em; color:#777777; line-height: 1.0em; margin-top:0}
 .agenda p {line-height: 0.9em; color: #333333}
-
+.noticia img {margin: 3px 10px 5px 3px}
+.noticia p {text-align: justify}
+.noticia h1 {color: #333333; font-size:1.5em}
+.noticia small {color: #979797}

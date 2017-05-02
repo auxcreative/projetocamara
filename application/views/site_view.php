@@ -19,9 +19,7 @@
     
   </head>
   <body>
-
 		<div class="row topslide">
-
 		<div id="carousel-topo" class="carousel slide" data-ride="carousel">
 		<div class="col-sm-12 topbar">
 			<div class="row">			
@@ -40,8 +38,7 @@
   <ul class="dropdown-menu">
     <li><?php echo anchor(base_url('lei_de_acesso_a_informacao'),'Lei de acesso à informação') ?></li>
     <li role="separator" class="divider"></li>
-    <li><?php echo anchor('http://barrosoptr.dcfiorilli.com.br:2024/SCPIWEB_CMCOELHONETO/','Prestação de contas') ?></li>
-    
+    <li><?php echo anchor('http://barrosoptr.dcfiorilli.com.br:2024/SCPIWEB_CMCOELHONETO/','Prestação de contas') ?></li>  
     <li><?php echo anchor('http://barrosoptr.dcfiorilli.com.br:2024/SCPIWEB_CMCOELHONETO/','Licitações e Contratos') ?></li>
     <li><?php echo anchor('http://barrosoptr.dcfiorilli.com.br:2024/SCPIWEB_CMCOELHONETO/','Despesas e Receitas') ?></li>
     <li><?php echo anchor('http://barrosoptr.dcfiorilli.com.br:2024/SCPIWEB_CMCOELHONETO/','Recursos Humanos') ?></li>
@@ -68,7 +65,7 @@
 		</div> 	
   		</div>  
   	<div class="row">		
-  	  <nav class="navbar navbar-default hidden-md">
+  	  <nav class="navbar navbar-default hidden-md hidden-lg">
         <div class="container-fluid">
           <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -79,21 +76,45 @@
             </button>
             <a class="navbar-brand" href="<?php echo base_url(); ?>"><img src="<?php echo base_url('images/brasao-icon.png') ?>" width="20" height="21" /> </a>
           </div>
-          <div id="navbar" class="navbar-collapse collapse">
+        <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
               <li class="active"><a href="#">Home</a></li>
-              <li><a href="#">About</a></li>
-              <li><a href="#">Contact</a></li>
+              
               <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Instituição <span class="caret"></span></a>
                 <ul class="dropdown-menu">
-                  <li><a href="#">Action</a></li>
-                  <li><a href="#">Another action</a></li>
-                  <li><a href="#">Something else here</a></li>
+                  <li><a href="<?php echo base_url('instituicao/presidencia_da_camara'); ?>">Presidente da Câmara</a></li>
                   <li role="separator" class="divider"></li>
-                  <li class="dropdown-header">Nav header</li>
-                  <li><a href="#">Separated link</a></li>
-                  <li><a href="#">One more separated link</a></li>
+                  <li><a href="<?php echo base_url('instituicao/mesa_diretora'); ?>">Mesa Diretora</a></li>
+                  <li role="separator" class="divider"></li>
+                  <li><a href="<?php echo base_url('instituicao/regimento_interno'); ?>">Regimento Interno</a></li>
+                  <li role="separator" class="divider"></li>
+                 <li><a href="<?php echo base_url('instituicao/regimento_interno'); ?>">Ordem do Dia</a></li>
+                  <li role="separator" class="divider"></li>
+                </ul>
+              </li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Vereadores <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="<?php echo base_url('vereador/dados_e_contatos'); ?>">Dados e Contatos</a></li>
+                  <li role="separator" class="divider"></li>
+                  <li><a href="<?php echo base_url('vereador/lista_de_presenca'); ?>">Lista de Presença</a></li>
+                  <li role="separator" class="divider"></li>
+                  <li><a href="<?php echo base_url('vereador/liderancas'); ?>">Lideranças</a></li>
+                  <li role="separator" class="divider"></li>
+                </ul>
+              </li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Leis e Projetos <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="<?php echo base_url('leis/lei_organica'); ?>">Lei Orgânica Municipal</a></li>
+                  <li role="separator" class="divider"></li>
+                  <li><a href="<?php echo base_url('leis/legislacao_municipal'); ?>">Legislação Municipal</a></li>
+                  <li role="separator" class="divider"></li>
+                  <li><a href="<?php echo base_url('instituicao/legislacao_estadual'); ?>">Legislação Estadual</a></li>
+                  <li role="separator" class="divider"></li>
+                  <li><a href="<?php echo base_url('instituicao/legislacao_federal'); ?>">Legislação Federal</a></li>
+                  <li role="separator" class="divider"></li>
                 </ul>
               </li>
             </ul>

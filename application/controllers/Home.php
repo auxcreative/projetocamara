@@ -28,7 +28,6 @@ class Home extends CI_Controller {
 	 */
 	public function index($cod=0) {
 
-
 		$Agenda = array(
                 "distinct" => null,
 	            "select" => "agenda.*, evento.id as eventos_id, evento.nome as nome_evento",
@@ -68,7 +67,7 @@ class Home extends CI_Controller {
 	            "join" => ""
         	);
 
-					$parametrosItem = array(
+		$parametrosItem = array(
 						"distinct"=>NULL,
 			            "select" => "*",
 			            "table" => "vereador",
@@ -81,7 +80,7 @@ class Home extends CI_Controller {
 			            "join" => ""
 			        );
 
-				$parametrosVereador = array(
+		$parametrosVereador = array(
 						"distinct"=>NULL,
 			            "select" => "*",
 			            "table" => "vereador",
@@ -95,12 +94,11 @@ class Home extends CI_Controller {
 			        );
 
 					//Obem matriz com os dados
-					$dados['vereador'] = getItem($parametrosItem)->result();
-					$dados['vereadorLinha'] = getItem($parametrosVereador)->row();
-
-			$dados['agenda'] = getItem($Agenda)->result();
-			$dados['noticiasmais'] = getItem($noticiasMais)->result();
-			$dados['noticia'] = getItem($notciasSlide)->result();
+		$dados['vereador'] = getItem($parametrosItem)->result();
+		$dados['vereadorLinha'] = getItem($parametrosVereador)->row();
+		$dados['agenda'] = getItem($Agenda)->result();
+		$dados['noticiasmais'] = getItem($noticiasMais)->result();
+		$dados['noticia'] = getItem($notciasSlide)->result();
 
 
 		set_tema('conteudo', load_modulo_site('view_inicio',$dados));

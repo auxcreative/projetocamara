@@ -54,8 +54,8 @@ function init_login() {
 	set_tema('titulo', 'Câmara Mul. de Coelho Neto');
 	set_tema('rodape', '<p class="rodape">Câmara Municipal de Coelho Neto - MA; 2017</p>');
 	set_tema('template', 'login_view');
-	set_tema('headerinc', load_css(array('bootstrap.min', 'font-awesome/css/font-awesome', 'app')), FALSE);
-	set_tema('footerinc', load_js(array('jquery.min', 'bootstrap.min')), FALSE);
+	set_tema('headerinc', load_css(array('../vendor/font-awesome/css/font-awesome.min','../vendor/bootstrap/css/bootstrap.min', 'app')), FALSE);
+	set_tema('footerinc', load_js(array('../vendor/jquery/jquery.min', '../vendor/bootstrap/js/bootstrap.min')), FALSE);
 }
 
 function init_site() {
@@ -75,6 +75,7 @@ function init_site() {
 
 function init_main() {
 	$CI = &get_instance();
+	
 	$prefs['template'] = array(
         'table_open'           => '<table class="calendar">',
         'cal_cell_start'       => '<td class="day">',

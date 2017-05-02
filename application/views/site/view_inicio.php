@@ -31,14 +31,12 @@ if (!defined('BASEPATH'))
   	$active = 1;
 	foreach($noticia as $news): 	 ?>
     <div class="item <?php echo ($active == 1) ? 'active' : '' ?>">
-      <img src="<?php echo base_url('uploads/noticias/'.$news->url) ?>" alt="Câmara de coelho neto, MA" >
+      <a href="<?php echo base_url('noticias/acesso/' . strtolower($news->slug)); ?>">
+      <img src="<?php echo base_url('uploads/noticias/'.$news->url) ?>" alt="Câmara de coelho neto, MA" ></a>
   <div class="carousel-caption">
     <h4><?php echo $news -> titulo; ?></h4>
-    <p><?php echo $news -> resumo; ?></p>
-  </div>
-  					<div class="item">
-						<img src="<?php echo base_url('uploads/noticias/IMG_5600.jpg') ?>" alt="..."width="100%" height="100%">
-					</div>	
+    <p><?php echo word_limiter($news -> resumo,20); ?></p>
+    </div>
     </div>
     <?php $active++;
 
@@ -131,8 +129,8 @@ if (!defined('BASEPATH'))
 	<h3>Últimas Noticias</h3>
 <dl>
 <?php foreach($noticiasmais as $mais): ?>
-  <dt><span class="glyphicon glyphicon-chevron-right"></span> <?php echo arruma_data($mais -> data_postagem); ?> - <?php echo word_limiter($mais -> titulo, 4); ?></dt>
-  <dd><a href="<?php echo base_url('noticias/acesso/' . strtolower($mais -> slug)); ?>"><?php echo word_limiter($mais -> resumo, 12); ?></a></dd>
+  <dt><span class="glyphicon glyphicon-chevron-right"></span> <?php echo arruma_data($mais -> data_postagem); ?> - <?php echo word_limiter($mais -> titulo, 7); ?></dt>
+  <dd><a href="<?php echo base_url('noticias/acesso/' . strtolower($mais -> slug)); ?>"><?php echo word_limiter($mais -> resumo, 18); ?></a></dd>
   <?php endforeach; ?>
 </dl>
 </div>
