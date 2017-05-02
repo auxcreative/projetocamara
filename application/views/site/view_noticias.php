@@ -12,10 +12,15 @@
   <small><?php echo arruma_data($noticia->data_postagem) ?></small>
   </div>
   <div class="col-sm-6">
-  	<i class="fa fa-whatsapp fa-2x" aria-hidden="true"></i> I
+  	<i class="fa fa-whatsapp fa-2x" aria-hidden="true"> <a href='whatsapp://send?text=<?php echo $noticia->titulo?> site: <?php echo base_url("noticias/acesso/".$noticia->slug) ?>'>compartilhar</a></i> I
   </div>
   </div>
   <div class="row">
   <?php echo $noticia->texto ?>
 	</div>
+	<br />
+	<br />
+	<br />
+	
+
 </div>

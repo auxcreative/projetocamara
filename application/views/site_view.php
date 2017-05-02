@@ -7,6 +7,7 @@
     <!-- As 3 meta tags acima *devem* vir em primeiro lugar dentro do `head`; qualquer outro conteúdo deve vir *após* essas tags -->
     <title>{titulo}</title>
 
+
     <!-- Bootstrap -->
     {headerinc}
 
@@ -62,6 +63,7 @@
 						<img src="<?php echo base_url('uploads/topbar/cidade3.jpg') ?>" alt="...">
 				</div>
 			</div>
+
 		</div> 	
   		</div>  
   	<div class="row">		
@@ -74,12 +76,13 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="<?php echo base_url(); ?>"><img src="<?php echo base_url('images/brasao-icon.png') ?>" width="20" height="21" /> </a>
+            <a class="navbar-brand" href="<?php echo base_url(); ?>"><img src="<?php echo base_url('images/brasao-icon.png') ?>" width="24" height="25" /> </a>
           </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
               <li class="active"><a href="#">Home</a></li>
               
+
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Instituição <span class="caret"></span></a>
                 <ul class="dropdown-menu">
@@ -107,6 +110,7 @@
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Leis e Projetos <span class="caret"></span></a>
                 <ul class="dropdown-menu">
+
                   <li><a href="<?php echo base_url('leis/lei_organica'); ?>">Lei Orgânica Municipal</a></li>
                   <li role="separator" class="divider"></li>
                   <li><a href="<?php echo base_url('leis/legislacao_municipal'); ?>">Legislação Municipal</a></li>
